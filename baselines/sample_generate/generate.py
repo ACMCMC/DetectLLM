@@ -98,7 +98,7 @@ def generate_data(args, model_config):
     if dataset in custom_datasets.DATASETS:
         data = custom_datasets.load(dataset, model_config['cache_dir'])
     else:
-        data = datasets.load_dataset(dataset, split='train', cache_dir=model_config['cache_dir'])[key]
+        data = datasets.load_dataset(dataset, 'detection_en', split='train', cache_dir=model_config['cache_dir'])[key]
 
     # get unique examples, strip whitespace, and remove newlines
     # then take just the long examples, shuffle, take the first 5,000 to tokenize to save time

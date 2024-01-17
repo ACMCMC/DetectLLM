@@ -46,7 +46,7 @@ def load_mask_filling_model(args, mask_filling_model_name, model_config):
     
     print(f'Loading mask filling model {mask_filling_model_name}...')
     mask_model = transformers.AutoModelForSeq2SeqLM.from_pretrained(mask_filling_model_name, cache_dir=model_config['cache_dir'])
-    mask_model.parallelize()
+    #mask_model.parallelize()
     try:
         n_positions = mask_model.config.n_positions
     except AttributeError:
